@@ -535,7 +535,7 @@ func aideDaemonset(dsName string, fi *fileintegrityv1alpha1.FileIntegrity) *apps
 				Spec: corev1.PodSpec{
 					NodeSelector:       fi.Spec.NodeSelector,
 					Tolerations:        fi.Spec.Tolerations,
-					ServiceAccountName: common.OperatorServiceAccountName,
+					ServiceAccountName: common.DaemonServiceAccountName,
 					Containers: []corev1.Container{
 						{
 							SecurityContext: &corev1.SecurityContext{
